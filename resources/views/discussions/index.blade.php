@@ -1,8 +1,36 @@
 @extends('layouts.app')
-
+@section("styles")
+  .card{
+    background-color:#ededed ;
+    padding:5px;
+  }
+  .card:hover{
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+  }
+  .card-header{
+    background-color :#d6d8db ;
+  }
+  .jumbotron{
+    background-color:#d6d8db ;
+  }
+  .jumbotron h1 {
+      color: black;
+      font-family: 'Do Hyeon', sans-serif;
+    }
+  .jumbotron p {
+      color: black;
+      font-family: 'Economica', sans-serif;
+      font-weight: 700;
+    }
+    .all {
+        text-align: center;
+      }
+@endsection
 @section('content')
 <div>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid" style="">
         <div class="container">
             <h1 class="display-4">Discussions</h1>
             <p class="lead">Lets discuss various topics together</p>
@@ -20,7 +48,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><strong>{{$post->title}}</strong></h5>
                     <p class="card-text">
-                        {{$post->content}}
+                        {{ str_limit($post->content, $limit = 150, $end = '...') }}
                     </p>
                     <blockquote class="blockquote mb-0">
                         <footer class="blockquote-footer">Started by

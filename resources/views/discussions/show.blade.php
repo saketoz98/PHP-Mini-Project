@@ -1,11 +1,20 @@
 @extends('layouts.app')
+@section("styles")
+  .card{
+    background-color:#ededed ;
+    padding:5px;
+  }
 
+  .card-header{
+    background-color :#d6d8db ;
+  }
+@endsection
 @section('content')
   <div class="container">
-    <div class="card" style="margin: 20px 0px;">
+    <div class="card " style="margin: 20px 0px;">
       <div class="card-header">
         <strong>{{strtoupper($post->category)}}</strong>
-        <span class="float-right">{{$post->created_at}}</span>
+        <span class="float-right">{{date("d M Y", strtotime($post->created_at))}}</span>
       </div>
       <div class="card-body">
         <h5 class="card-title"><strong>{{$post->title}}</strong></h5>

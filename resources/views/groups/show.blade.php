@@ -1,5 +1,18 @@
 @extends('layouts.app')
-
+@section("styles")
+  .card{
+    background-color:#ededed ;
+    padding:5px;
+  }
+  .card:hover{
+    border: 1px solid #BFBFBF;
+    background-color: white;
+    box-shadow: 10px 10px 5px #aaaaaa;
+  }
+  .card-header{
+    background-color :#d6d8db ;
+  }
+@endsection
 @section('content')
     <div class="container">
       @if (Auth::check())
