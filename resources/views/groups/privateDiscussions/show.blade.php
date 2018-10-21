@@ -25,7 +25,7 @@
         @if(!Auth::guest())
           @if(Auth::user()->id === $post->user_id)
           <div class="float-right">
-            <a href="{{$post->id."/edit"}}" class="btn btn-warning">Edit</a>
+            <a href="{{$post->id."/edit"}}" class="btn btn-info">Edit</a>
 
             {!!Form::open(['action' => ['privateDiscussionController@destroy',$group_id ,$post->id], 'method' => 'POST', 'style'=>"display:inline-block"])!!}
                   {{Form::hidden('_method', 'DELETE')}}
@@ -61,7 +61,7 @@
                       @if(!Auth::guest())
                         @if(Auth::user()->id === $comment->user_id)
                         <div class="float-right">
-                          <a class="btn btn-xs btn-warning"
+                          <a class="btn btn-xs btn-info"
                              href='{{$post->id}}/comments/{{$comment->id}}/edit'>Edit</a>
                              {!!Form::open(['action' => ['privateRepliesController@destroy',$group_id,$post->id, $comment->id], 'method' => 'POST', 'style'=>"display:inline-block"])!!}
                                    {{Form::hidden('_method', 'DELETE')}}

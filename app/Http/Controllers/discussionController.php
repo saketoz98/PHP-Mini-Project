@@ -15,6 +15,8 @@ class discussionController extends Controller
      *
      * @return void
      */
+     var $current ;
+
     public function __construct()
     {
         $this->middleware('auth',['except'=>['index','show']]);
@@ -28,7 +30,8 @@ class discussionController extends Controller
     {
         //
         $posts = Discussion::orderBy('created_at','desc')->paginate(10);
-        return view('discussions.index')->with('posts', $posts);
+        $this->current = 'discussions';
+        return view('discussions.index')->with('posts', $posts)->with('current',$this->current);
     }
 
     /**
@@ -39,7 +42,9 @@ class discussionController extends Controller
     public function create()
     {
         //
-        return view('discussions.newDiscussion');
+        $this->current = 'createDiscussions';
+
+        return view('discussions.newDiscussion')->with('current',$this->current);
     }
 
     /**

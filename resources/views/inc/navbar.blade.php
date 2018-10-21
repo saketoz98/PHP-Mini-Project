@@ -34,10 +34,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto" id="myDIV">
-              <li class="nav-item active">
+              <li class="nav-item ">
                 <a class="nav-link" href="{{URL::to('discussions')}}">Discussions<span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item" >
                 <a class="nav-link" href="{{URL::to('discussions/create')}}">Start Discussion</a>
               </li>
               <li class="nav-item">
@@ -48,11 +48,11 @@
                 Category
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a href="discussions/topic/sports" class="dropdown-item">Sports</a>
-                  <a href="discussions/topic/technology" class="dropdown-item">Technology</a>
-                  <a href="discussions/topic/science" class="dropdown-item">Science</a>
-                  <a href="discussions/topic/politics" class="dropdown-item">Politics</a>
-                  <a href="discussions/topic/education" class="dropdown-item">Education</a>
+                  <a href="/discussions/topic/sports" class="dropdown-item">Sports</a>
+                  <a href="/discussions/topic/technology" class="dropdown-item">Technology</a>
+                  <a href="/discussions/topic/science" class="dropdown-item">Science</a>
+                  <a href="/discussions/topic/politics" class="dropdown-item">Politics</a>
+                  <a href="/discussions/topic/education" class="dropdown-item">Education</a>
               </div>
             </li>
           </ul>
@@ -60,7 +60,7 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" href="about">About Us</a>
+                <a class="nav-link" href="{{route("about")}}">About Us</a>
               </li>
                 <!-- Authentication Links -->
                 @guest
